@@ -124,8 +124,10 @@ export default {
         Cookies.remove("intended_url");
         this.$router.push({ path: intendedUrl });
       } else {
-        //const firstRoute = this.$store.getters["auth/firstRoute"];
-        this.$router.push({ name: "home" });
+        const firstRoute = this.$store.getters["auth/firstRoute"];
+
+        this.$router.push({name: firstRoute});
+       // this.$router.push({ name: "home" });
         //this.$router.push(firstRoute);
       }
     },

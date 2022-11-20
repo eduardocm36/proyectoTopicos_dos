@@ -1,10 +1,6 @@
 import store from '~/store'
 
-/**
- * This is middleware to check the current user role.
- *
- * middleware: 'role:admin,manager',
- */
+
 
 export default (to, from, next, roles) => {
   // Grab the user
@@ -12,9 +8,10 @@ export default (to, from, next, roles) => {
 
   // Split roles into an array
   roles = roles.split(',')
-
+  console.log(user.rol_id)
+  //const currentrol=store.getters['auth/currentRolid']
   // Check if the user has one of the required roles...
-  if (!roles.includes(user.role)) {
+  if (!roles.includes(user.rol_id.toString())) {
     next('/unauthorized')
   }
 

@@ -25,11 +25,27 @@ export default [
     ]
   },
   {
-    path: '/evaluador',
-    component: page('evaluador/index.vue'),
+    path: '/admin',
+    component: page('admin/index.vue'),
     children: [
-      { path: '', redirect: { name: 'dash.evaluador' } },
-      { path: 'lista', name: 'dash.evaluador', component: page('evaluador/listaEvaluadores.vue') }
+      { path: '', redirect: { name: 'dash.admin' } },
+      { path: 'dashboard', name: 'dash.admin', component: page('admin/dashboard.vue') },
+    ]
+  },
+  {
+    path: '/meza-de-partes',
+    component: page('meza/index.vue'),
+    children: [
+      { path: '', redirect: { name: 'dash.meza' } },
+      { path: 'dashboard', name: 'dash.meza', component: page('meza/dashboard.vue') },
+    ]
+  },
+  {
+    path: '/unidad-organica',
+    component: page('unidad/index.vue'),
+    children: [
+      { path: '', redirect: { name: 'dash.unidad' } },
+      { path: 'dashboard', name: 'dash.unidad', component: page('unidad/dashboard.vue') },
     ]
   },
 

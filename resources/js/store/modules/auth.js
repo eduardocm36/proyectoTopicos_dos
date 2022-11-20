@@ -5,14 +5,32 @@ import * as types from '../mutation-types'
 // state
 export const state = {
   user: null,
-  token: Cookies.get('token')
+  token: Cookies.get('token'),
+  currentRolid: null,
 }
-
+function getFirstRoute(rol_id) {
+  let path = 'unautorized';
+  switch (rol_id) {
+    case 1:
+      path = 'dash.admin'
+      break;
+    case 2:
+      path = 'dash.meza'
+      break;
+    case 3:
+      path = 'dash.unidad'
+      break;
+  }
+  //console.log(rol_id)
+  return path
+}
 // getters
 export const getters = {
   user: state => state.user,
   token: state => state.token,
-  check: state => state.user !== null
+  check: state => state.user !== null,
+  firstRoute: state=>getFirstRoute(state.currentRolid),
+  currentRolid:state=>state.currentRolid,
 }
 
 // mutations
@@ -24,11 +42,14 @@ export const mutations = {
 
   [types.FETCH_USER_SUCCESS] (state, { user }) {
     state.user = user
+    state.currentRolid=user.rol_id
+    Cookies.set('currentRolid', user.rol_id)
   },
 
   [types.FETCH_USER_FAILURE] (state) {
     state.token = null
     Cookies.remove('token')
+    Cookies.remove('currentRolid')
   },
 
   [types.LOGOUT] (state) {
