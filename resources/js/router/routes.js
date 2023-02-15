@@ -54,4 +54,5 @@ export default [
   //PRUEBAS
 
   { path: '/prueba', name: 'prueba', component: page('pruebas/pruebaPadre.vue') },
+  { path: '/pdf', name: 'pdf', component: page('pruebas/pdf.vue') },
 ]
