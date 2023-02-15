@@ -20,8 +20,7 @@
           margin-right:110px;
           padding:0;
           background:rgb(7, 7, 11);
-          /* font-family:'English 111 Vivace BT', arial; */
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
+
       }
       .page-break{
           page-break-after: always;
@@ -39,7 +38,7 @@
       }
       .logo-undac{
         width:55px ;
-          float:left; 
+        float:left; 
 
       }
       .encabesado{
@@ -50,7 +49,6 @@
           font-weight: bold;    
           margin-top:0;
           padding-top:0;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
       .encabesado p{
         margin:0;
