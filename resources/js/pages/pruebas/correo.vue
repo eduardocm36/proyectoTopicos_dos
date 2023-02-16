@@ -12,11 +12,11 @@
             v-model="form.cuerpo"
             ></v-textarea>
             <v-card-actions>
-                <v-btn @click="enviar()" color="warning">Enviar mail</v-btn>
+                <v-btn @click="enviar(),disable=true" color="warning" :disabled="disable">Enviar mail</v-btn>
             </v-card-actions>
         </v-card>
 
-        <v-alert v-if="mensaje" type="info">{{ mensaje }}</v-alert>
+        <v-alert v-if="mensaje" :type="tipo">{{ mensaje }}</v-alert>
         
     </div>
 </template>
@@ -29,13 +29,21 @@ export default {
             form:new Form({
                 asunto:'',
                 cuerpo:'',
-            })
+            }),
+            tipo:'info',
+            disable:false,
         }
     },methods:{
         enviar(){
             this.mensaje='';
             this.form.post('/api/enviarcorreo').then(response=>{
+                this.disable=false
                 this.mensaje=response.data;
+                this.tipo='success';
+            }).catch(error=>{
+                this.mensaje=error.response.data.message;
+                this.tipo='error';
+                this.disable=false
             })
         }
     }

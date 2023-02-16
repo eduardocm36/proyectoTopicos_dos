@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <img src="https://gradostitulos.undac.edu.pe/img/logo-undac.png" alt="">
     <p>{{$cuerpo}}</p>
+
+    <a href="https://gradostitulos.undac.edu.pe/Fut.pdf"> desacarga tu documento</a>
 </body>
 </html>
