@@ -41,7 +41,7 @@
         float:left; 
 
       }
-      .encabesado{
+      .encabezado{
           text-align: center;
           width:90%;
           float:left; 
@@ -50,7 +50,7 @@
           margin-top:0;
           padding-top:0;
       }
-      .encabesado p{
+      .encabezado p{
         margin:0;
         padding:0;
         justify-content: start;
@@ -59,268 +59,265 @@
       }
       .titulo{
         font-size:10px;
-        padding-top:0px;
+        padding-top:1px;
         margin-top:2px;
         font-weight: bold;   
-        font-family: Arial, Helvetica, sans-serif
+        font-family: Arial, Helvetica, sans-serif;
       }
       .respuesta{
         margin:0;
         font-weight: none;   
-        font-size:11px; 
-        margin-bottom:2px;
-        font-family: Arial, Helvetica, sans-serif
-        
-      }
-      .cuerpo2tr{
-        padding:0px;
-        margin:0px;
-        font-family: Arial, Helvetica, sans-serif
-      }
-      .cuerpo2th{
-        width:285px;
-        text-align:left;
-        font-size:11px;
+        font-size:12px; 
+        margin-bottom:0px;
         font-family: Arial, Helvetica, sans-serif;
+        padding-left:13px;        
       }
-      .cuadro{
+
+      .linea{
         border-bottom: 1px  dotted ;
-        margin-top:10px ;
-        font-family: Arial, Helvetica, sans-serif
+        margin:0px;
+        margin-top:0px
       }
+
+      .margen{
+        height:40px;
+        vertical-align:bottom;
+      }
+      .margen-b{
+        height:25px;
+        vertical-align:bottom;
+      }
+      
+
   </style>
 
   <div >
     <img class="img_fondo" src="img/fondo_fut.png" alt="">
-    
-      <img src="img/u.png" alt=""  class="logo-undac">
+    <img src="img/u.png" alt=""  class="logo-undac">
 
-      <div class="encabesado" >
-        <p >UNIVERSIDAD NACIONAL DANIEL ALCIDES CARRIÓN</p> 
-        <p >FORMULARIO ÚNICO DE TRAMITE</p> 
-      </div>
+    <div class="encabezado" >
+       <p>UNIVERSIDAD NACIONAL DANIEL ALCIDES CARRIÓN</p> 
+       <p>FORMULARIO ÚNICO DE TRÁMITE</p> 
+    </div>
       <hr style="margin-top:62px;">
-      <table>
+ 
+      <table width="100%" >
         <tbody>
-          <tr style="margin-top:60px;">
-            <td></td>
-            <th style="width:350px;" ></th>
-            <div style="text-align:initial; font-weight: bold; font-size:12px;
-            width:210px;font-family: Arial, Helvetica, sans-serif;
-            height:70px">SOLICITO: <p style="font-weight: none">  {{$usuario['sumilla']}} </p> </div>
+          <tr style="margin-top:60px; ">
+            <td style="width:340px;" ></td>
+              <div style="text-align:initial; font-weight: bold; font-size:12px;
+              width:210px;font-family: Arial, Helvetica, sans-serif;
+              height:70px; padding-top:15px;">
+                SOLICITO: 
+                <span style="width:145px; padding-left:10px; line-height: 20px; text-align: justify " class="respuesta" >
+                  {{$usuario['sumilla']}} </span>
+              </div>
           </tr>
         </tbody>
       </table>
-      <table>
-        <tbody>
-          <tr style="padding-bottom:120px;">
-            <td></td>
-            <th style="width:335px;" ></th>
-            <th style="text-align:left;font-size:10px;width:190px;font-weight: bold; font-size:12px;">1.  SUMILLA  </th>
-          </tr>
-        </tbody>
-      </table>
-      <div style="border-bottom: 1px  dotted ;margin:0px; margin-top:10px">
-        <p class="respuesta">{{$usuario['destinatario']}}</p>
-      </div>
 
-      <div >
-        <p class="titulo">2. DESTINATARIO</p>
-        <div style="border-bottom: 1px  dotted ;margin:0px;">
-          <p class="respuesta">{{$usuario['nombre']}}</p>
-        </div>
-      </div>
-
-      <div >
-        <p class="titulo">3. DATOS DEL USUARIO (APELLIDOS Y NOMBRES ) </p>
-        <div style="border-bottom: 1px  dotted ;margin:0px;">
-          <p class="respuesta">{{$usuario['cargo']}}</p>
-        </div>
-      </div>
-
-      <div >
-        <p class="titulo">4. CARGO ACTUAL Y/O CENTRO DE TRABAJO </p>
-      </div>
-
-      <table>
-        <tbody>
-          <tr class="cuerpo2tr"  >
-            <th class="cuerpo2th" >
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['dni']}}</p>
-              </div>
-              5. D.N.I
-              
-            </th>
-            <th class="cuerpo2th">
-              <div  class="cuadro">
-                <p class="respuesta" >{{$usuario['codigo']}}</p>
-              </div>
-              6. CÓDIGO DE MATRíCULA
-              
-            </th>
-          </tr>
-          <tr class="cuerpo2tr" >
-            <th class="cuerpo2th" >
-              <div class="cuadro">
-                <p class="respuesta">{{$usuario['telefono']}}</p>
-              </div>
-              7. N° CELULAR/TELF.
-              
-            </th>
-            <th class="cuerpo2th">
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['correo']}}</p>
-              </div>
-              8. CORREO ELECTRÓNICO
-              
-            </th>
-          </tr>
-        </tbody>
-      </table>
-      <table>
+      <table width="100%"  >
         <tbody>
           <tr >
-            <td></td>
-            <th style="width:200px;text-align:left;font-size:11px;font-family: Arial, Helvetica, sans-serif;" >
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['facultad']}}</p>
-              </div>
-              9. FACULTAD
-              
-            </th>/
-            <th style="width:200px;font-size:11px;font-family: Arial, Helvetica, sans-serif;">
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['escuela']}}</p>
-              </div>
-              ESCUELA PROFESIONAL
-                            
-            </th>/
-            <th style="width:200px;font-size:11px;font-family: Arial, Helvetica, sans-serif;">
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario[' ']}}</p>
-              </div>
-              ESPECIALIDAD
-            </th>
-
+            <td style="width:340px;" ></td>
+            <td colspan="2"  style="text-align:left; width:209px; font-weight: bold;">
+              <p class="titulo"> 1.  SUMILLA</p> 
+            </td>
           </tr>
-        </tbody>
-      </table>      
-      <div>
-        <div class="cuadro">
-          <p class="respuesta">{{$usuario['direccion']}}</p>
-        </div>
-        <p class="titulo">10. DOMICILIO DEL USUARIO (Calle, Distrito, Provincia Y Región) </p> 
-      </div>
-      <div>
-        <div class="cuadro">
-          <p class="respuesta"></p>
-        </div>
-        <p class="titulo">11. FUNDAMENTACIÓN DEL PEDIDO </p> 
-      </div> 
-      <div style="height:200px;">
-        <p style="font-size: 14px;">
-          {{$usuario['cuerpo']}}
 
-        </p>
-      </div>
+          <tr  >
+            <td colspan="3" class="margen">
+              <div class="linea" >
+              <p class="respuesta">{{$usuario['destinatario']}}</p></div>
+              <p class="titulo">2. DESTINATARIO</p> 
+            </td>
+          </tr>
 
-      <table>
+          <tr>
+            <td colspan="3" class="margen">
+              <div class="linea" >
+              <p class="respuesta">{{$usuario['nombre']}}</p></div>
+              <p class="titulo">3. DATOS DEL USUARIO (APELLIDOS Y NOMBRES ) </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="3" class="margen" >
+              <div class="linea" >
+              <p class="respuesta">{{$usuario['cargo']}}</p></div>
+              <p class="titulo">4. CARGO ACTUAL Y/O CENTRO DE TRABAJO </p>
+            </td>
+          </tr>
+          </tbody>
+      </table>
+
+      <table width="100%" >
         <tbody>
-          <tr class="cuerpo2tr" >
-            <th style="width:280px;text-align:left;font-size:11px;" >
-              
-              <p> 12. ANEXO: <span style="font-weight: none;  "> {{$usuario['anexo']}}</span></p>
-            </th>
-            <th style="width:290px;text-align:left;font-size:11px">
-              
-              <p>13. FECHA: <span style="font-weight: none;">{{$usuario['fecha']}}</span></p>
-              
-            </th>
+          <tr>
+            <td class="margen" style="width:250px;">
+              <div class="linea"> 
+                <p class="respuesta" >{{$usuario['dni']}}</p></div>
+                <p class="titulo">5. D.N.I </p>  
+            </td>
+
+            <td class="margen" style=" padding-left:8px; ">
+              <div  class="linea">
+                <p class="respuesta" >{{$usuario['codigo']}}</p></div>
+                <p class="titulo"> 6. CÓDIGO DE MATRíCULA </p>               
+            </td>
           </tr>
 
+          <tr>
+            <td class="margen">
+              <div class="linea">
+                <p class="respuesta">{{$usuario['telefono']}}</p></div>
+                <p class="titulo">7. N° CELULAR/TELF.</p> 
+            </td>
 
-          <br>
-          <tr class="cuerpo2tr" >
-            <th style="width:280px; text-align:left;font-size:11px;" >
-              
-            </th>
-            <th style="width:290px; text-align:left;font-size:11px">
-              
-              <p>14. FIRMA </p>
-              
-            </th>
+            <td class="margen" style=" padding-left:8px;">
+                <div class="linea">
+                <p class="respuesta" >{{$usuario['correo']}}</p></div>
+                <p class="titulo">8. CORREO ELECTRÓNICO</p> 
+            </td>
+          </tr>
+          </tbody>
+      </table>
+
+      <table width="100%"  >
+        <tbody>
+          <tr>
+            <td class="margen" style="width:120px">
+              <div class="linea">
+                <p class="respuesta" style="font-size:10.5px; " >{{$usuario['facultad']}}</p></div>
+                <p class="titulo" > 9. FACULTAD </p> 
+            </td>
+
+            <td class="margen" style="width:130px; padding-left:8px; padding-right:8px;">
+              <div class="linea" >
+              <p class="respuesta" style="font-size:10.5px; text-align:center; padding-left:0px;" >{{$usuario['escuela']}}</p></div>
+              <p class="titulo" style="text-align:center;" >ESCUELA PROFESIONAL</p> 
+            </td>
+
+            <td class="margen" style="width:130px">
+              <div class="linea">
+              <p class="respuesta" style="font-size:10.5px; text-align:center; padding-left:0px;" >{{$usuario[' ']}}</p></div>
+              <p class="titulo" style="text-align:center;" >ESPECIALIDAD</p>
+            </td>
+          </tr>
+          </tbody>
+      </table>
+
+      <table width="100%"  >
+        <tbody>
+          <tr>
+            <td class="margen">
+              <div class="linea">
+              <p class="respuesta">{{$usuario['direccion']}}</p></div>
+              <p class="titulo">10. DOMICILIO DEL USUARIO (Calle, Distrito, Provincia Y Región) </p> 
+            </td>
+          </tr>
+          <tr>
+            <td class="margen">
+              <div class="linea" style="padding-top:15px;" ></div>
+              <p class="titulo">11. FUNDAMENTACIÓN DEL PEDIDO </p>             
+              <div style="height:160px; line-height: 20px; text-align: justify ">
+                <p class="respuesta"> {{$usuario['cuerpo']}}</p>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+      </table>
+
+      <table width="100%" >
+        <tbody>
+          <tr>
+            <td rowspan="2"  style="width: 340px; vertical-align: text-top; padding-top:5px;"  >
+              <p class="titulo"> 12. ANEXO.</p>
+              <p class="respuesta" style=" padding-left:15px; line-height: 20px; text-align: justify " >  {{$usuario['anexo']}}</p>
+            </td>
+
+            <td style=" vertical-align: text-top;">
+              <div class="titulo" style=" float:left;">13. FECHA:</div>
+                <div class="linea" style="width:165px;  margin-left:auto"; >
+                  <span class="respuesta">  {{$usuario['fecha']}} </span>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="margen">
+              <div class="titulo" >14. FIRMA: 
+                <div class="linea" style="width:165px;  margin-left:auto"; ></div>
+              </div>
+            </td>
           </tr>
 
         </tbody>
       </table>
-
-
+      <br>
       <hr>
 
-      <div>
-        <p class="titulo">FUNDAMENTACIÓN DEL PEDIDO: </p> 
-      </div>
-      <table>
-        <tbody>
-          <tr  >
-            <th style="width:350px;text-align:left;font-size:11px;" >
-              APELLIDOS Y NOMBRES: <span style="font-weight: none;"> {{$usuario['nombre']}}</span>
-              
-            </th>
-            <th style="width:200px;text-align:left;font-size:11px">
-
-              FOLIO: 
-      
-            </th>
+      <table width="100%">
+        <tbody class="margen">
+          <tr>
+            <td colspan="2" class="margen-b">
+                <div class="titulo" style=" float:left;"> FUNDAMENTACIÓN DEL PEDIDO: </div> 
+                  <div class="linea" style="width:402px; margin-left:4px; float:left;" >
+                  <span class="respuesta" >  {{$usuario['sumilla']}} </span> </div>
+            </td>
           </tr>
-          <tr  >
-            <th style="width:350px;text-align:left;font-size:11px" >
 
-              N° DE REGISTRO: 
+          <tr>
+            <td class="margen-b" style="width:420px; ">
+                <div class="titulo" style=" float:left;" >APELLIDOS Y NOMBRES:</div>
+                  <div class="linea" style="width:285px;  margin-left:4px; float:left;" >
+                  <span class="respuesta">{{$usuario['nombre']}}</span> </div>
+            </td>
+            <td class="margen-b">
+              <div class="titulo" style=" float:left;">FOLIO: 
+                <span class="linea" style="width:105px; margin-top:13px; margin-left:40px; float:left;"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="margen-b" >
+              <div class="titulo" style=" float:left; ">  N° DE REGISTRO:  </div>
+                <div class="linea" style="width:320px;  margin-top:15px; margin-left:4px; float:left;"; ></div>
+            </td>
+            <td class="margen-b">
+              <div class="titulo" style=" float:left;" >FECHA: </div>
+              <div class="linea" style="width:105px;  margin: left -81px;float:left;"; >
+              <span class="respuesta"> {{$usuario['fecha']}}</span></div>
               
-            </th>
-            <th style="width:200px;text-align:left;font-size:11px">
-
-              FECHA: <span style="font-weight: none;"> {{$usuario['fecha']}}</span>
-              
-            </th>
+            </td>
           </tr>
         </tbody>
       </table>
 
-      <table>
+      <table width="100%" >
         <tbody>
-          <tr >
-            <td></td>
-            <th style="width:200px;font-size:11px;font-family: Arial, Helvetica, sans-serif;" >
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['facultad']}}</p>
-              </div>
-              FACULTAD
-              
-            </th>/
-            <th style="width:200px;font-size:11px;font-family: Arial, Helvetica, sans-serif;">
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['escuela']}}</p>
-              </div>
-              ESCUELA PROFESIONAL
-                            
-            </th>/
-            <th style="width:200px;font-size:11px;font-family: Arial, Helvetica, sans-serif;">
-              <div class="cuadro">
-                <p class="respuesta" >{{$usuario['']}}</p>
-              </div>
-              ESPECIALIDAD
-            </th>
+          <tr>
+            <td class="margen-" style="width:120px">
+              <div class="linea">
+                <p class="respuesta" style="font-size:10.5px; text-align:center; padding-left:0px;">{{$usuario['facultad']}}</p></div>
+                <p class="titulo" style="text-align:center;">FACULTAD </p> 
+            </td>
 
+            <td class="margen" style="width:130px; padding-left:8px; padding-right:8px;">
+              <div class="linea" >
+              <p class="respuesta" style="font-size:10.5px; text-align:center; padding-left:0px;">{{$usuario['escuela']}}</p></div>
+              <p class="titulo" style="text-align:center;">ESCUELA PROFESIONAL</p> 
+            </td>
+
+            <td class="margen" style="width:130px">
+              <div class="linea">
+              <p class="respuesta" style="font-size:10.5px; text-align:center; padding-left:0px;">{{$usuario[' ']}}</p></div>
+              <p class="titulo" style="text-align:center;">ESPECIALIDAD</p>
+            </td>
           </tr>
-        </tbody>
-      </table> 
-   
+          </tbody>
+      </table>
+
   </div>
-
-
 </body>
 </html>
-
