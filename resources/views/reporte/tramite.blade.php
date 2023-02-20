@@ -100,7 +100,9 @@
                             @foreach($fase['otros'] as $otro)
                             <div >
                                     <span style="font-size:10px;" >{{$otro['NOMBRE']}}</span>
-                                    <span v-if="otro.VALOR=='GAME_OVER_TRAMITE'" style="font-size:10px;" >Tramite terminado</span>
+                                    @if($otro['VALOR']=='GAME_OVER_TRAMITE')
+                                        <span style="font-size:10px;" >Tramite terminado</span>
+                                    @endif
                                     <span v-else style="font-size:10px;" >{{$otro['VALOR']}}</span>                     
                             </div>
                             @endforeach
