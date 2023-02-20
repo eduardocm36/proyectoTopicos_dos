@@ -22,4 +22,18 @@ class documentocontroller extends Controller
         }, 'fut.pdf');
         exit();
     }
+
+
+    protected function descargar_reporte(Request $request){
+        $tramite=$request->tramite;
+        $pdf = PDF::loadView('reporte.tramite',['tramite'=>$tramite]);
+        $pdf->setPaper('A4', 'portraite');
+        
+       // Response::header('Content-type', 'application/pdf');
+        //$pdf->stream('fut.pdf',array('attachment' => false));
+        return response()->streamDownload(function () use ($pdf) {
+            echo $pdf->output();
+        }, 'fut.pdf');
+        exit();
+    }
 }

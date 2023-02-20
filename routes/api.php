@@ -50,5 +50,6 @@ Route::group(['middleware' => 'guest:api'], function () {
 
 Route::get('evaluadores_lista',[EvaluadorController::class, 'listar_evaluador']);
 Route::post('download-prueba',[documentocontroller::class,'descargar_fut']);
+Route::post('download-prueba-reporte',[documentocontroller::class,'descargar_reporte']);
 
 Route::post('enviarcorreo',[Correos::class,'send_correo']);

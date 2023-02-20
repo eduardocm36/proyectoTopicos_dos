@@ -10,7 +10,7 @@
     <img src="https://gradostitulos.undac.edu.pe/img/logo-undac.png" alt="">
     <p style="color: green;">{{$cuerpo}}</p>
 
-    <a href="https://gradostitulos.undac.edu.pe/Fut.pdf"> desacarga tu documento</a>
+    <a href="https://gradostitulos.undac.edu.pe/Fut.pdf">Desacarga tu documento</a>
 </body>
 </html>
 
