@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Correos;
+use App\Http\Controllers\documentocontroller;
 use App\Http\Controllers\EvaluadorController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
@@ -47,3 +49,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 });
 
 Route::get('evaluadores_lista',[EvaluadorController::class, 'listar_evaluador']);
+Route::post('download-prueba',[documentocontroller::class,'descargar_fut']);
+Route::post('download-prueba-reporte',[documentocontroller::class,'descargar_reporte']);
+
+Route::post('enviarcorreo',[Correos::class,'send_correo']);
