@@ -32,7 +32,7 @@ class NotificarUser extends Mailable
     {
         return  $this->from('gradosytitulosundac2022@gmail.com', 'Grados y Títulos')
         //->to('orioltunino1234@gmail.com')
-        ->view('emails.notificar')
+        ->view('emails.correo')
         ->subject($this->asunto)
         ->with(['cuerpo'=>$this->cuerpo]);
         
