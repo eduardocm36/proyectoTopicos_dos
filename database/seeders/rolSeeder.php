@@ -15,21 +15,25 @@ class rolSeeder extends Seeder
     {
         DB::table('roles')->insert([
             [
-            'id' => 1,
-            'nombre' => 'Administrador',
-            'estado' => 1,
+                'id' => 1,
+                'nombre' => 'Administrador',
+                'estado' => 1,
             ],
             [
-            'id' => 2,
-            'nombre' => 'Meza de partes',
-            'estado' => 1,
+                'id' => 2,
+                'nombre' => 'Escuela',
+                'estado' => 1,
             ],
             [
-            'id' => 3,
-            'nombre' => 'Unidad orgánica',
-            'estado' => 1,
+                'id' => 3,
+                'nombre' => 'Docente',
+                'estado' => 1,
             ],
-            
+            [
+                'id'=>4,
+                'nombre'=>'Alumno',
+                'estado'=>1,
+            ]
             
         ]);
     }

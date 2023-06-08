@@ -48,8 +48,6 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
 });
 
-Route::get('evaluadores_lista',[EvaluadorController::class, 'listar_evaluador']);
-Route::post('download-prueba',[documentocontroller::class,'descargar_fut']);
-Route::post('download-prueba-reporte',[documentocontroller::class,'descargar_reporte']);
-
-Route::post('enviarcorreo',[Correos::class,'send_correo']);
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::post('add-pandel-escuela',[PanelController::class,'add_panel']);
+});
