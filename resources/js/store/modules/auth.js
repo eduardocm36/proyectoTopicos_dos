@@ -15,10 +15,13 @@ function getFirstRoute(rol_id) {
       path = 'dash.admin'
       break;
     case 2:
-      path = 'dash.meza'
+      path = 'dash.escuela'
       break;
     case 3:
-      path = 'dash.unidad'
+      path = 'dash.docente'
+      break;
+    case 4:
+      path = 'dash.alumno'
       break;
   }
   //console.log(rol_id)

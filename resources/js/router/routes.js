@@ -30,22 +30,44 @@ export default [
     children: [
       { path: '', redirect: { name: 'dash.admin' } },
       { path: 'dashboard', name: 'dash.admin', component: page('admin/dashboard.vue') },
+      { path: 'users', name: 'users.admin', component: page('admin/users.vue') },
+      { path: 'cursos', name: 'cursos.admin', component: page('admin/cursos.vue') },
+      { path: 'paneles', name: 'paneles.admin', component: page('admin/paneles.vue') },
     ]
   },
   {
-    path: '/meza-de-partes',
-    component: page('meza/index.vue'),
+    path: '/escuela',
+    component: page('escuela/index.vue'),
     children: [
-      { path: '', redirect: { name: 'dash.meza' } },
-      { path: 'dashboard', name: 'dash.meza', component: page('meza/dashboard.vue') },
+      { path: '', redirect: { name: 'dash.escuela' } },
+      { path: 'dashboard', name: 'dash.escuela', component: page('escuela/dashboard.vue') },
+      { path: 'paneles', name: 'panel.escuela', component: page('escuela/paneles.vue') },
+      { path: 'cursos', name: 'cursos.escuela', component: page('escuela/cursos.vue') },
+      { path: 'docentes', name: 'docentes.escuela', component: page('escuela/docentes.vue') },
     ]
   },
   {
-    path: '/unidad-organica',
-    component: page('unidad/index.vue'),
+    path: '/docente',
+    component: page('docente/index.vue'),
     children: [
-      { path: '', redirect: { name: 'dash.unidad' } },
-      { path: 'dashboard', name: 'dash.unidad', component: page('unidad/dashboard.vue') },
+      { path: '', redirect: { name: 'dash.docente' } },
+      { path: 'dashboard', name: 'dash.docente', component: page('docente/dashboard.vue') },
+    ]
+  },
+  {
+    path: '/alumno',
+    component: page('alumno/index.vue'),
+    children: [
+      { path: '', redirect: { name: 'dash.alumno' } },
+      { path: 'dashboard', name: 'dash.alumno', component: page('alumno/dashboard.vue') },
+    ]
+  },
+
+  { path:'/panel', component:page('paneles/index.vue'),
+    children:[
+      { path: '', redirect:{ name:"inicio" } },
+      { path: 'inicio', name: 'inicio', component: page('paneles/inicio.vue'), props:true },
+      { path: 'board/:id', name: 'board', component: page('paneles/board.vue'), props:true },
     ]
   },
 
@@ -53,8 +75,5 @@ export default [
 
   //PRUEBAS
 
-  { path: '/prueba', name: 'prueba', component: page('pruebas/pruebaPadre.vue') },
-  { path: '/pdf', name: 'pdf', component: page('pruebas/pdf.vue') },
-  { path: '/reporte', name: 'reporte', component: page('pruebas/reporte.vue') },
-  {path: '/correo', name:'correo', component:page('pruebas/correo.vue')},
+  { path: '/prueba', name: 'prueba', component: page('pruebas/componenteA.vue') },
 ]
