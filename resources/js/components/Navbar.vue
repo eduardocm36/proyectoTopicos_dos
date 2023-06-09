@@ -65,7 +65,7 @@ export default {
     // { name: "Iniciar sesión", path: "/login", notUser: true },
     // { name: "Registrarme", path: "/registro", notUser: true },
     //],
-    bgNavbar: "rgb(13 129 225)",
+    bgNavbar: "#1d3461",
     colorletra:'#fff',
     rounded:false,
     letra_color:'#fff'
