@@ -5,13 +5,15 @@
         <v-icon>
           mdi-account-plus
         </v-icon>
-        Agregar
+        Agregarghggjhjh
       </v-btn>
     </template>
     <v-card>
     </v-card>
   </v-dialog>
 </template>
+
+
 <script>
 
 export default {
