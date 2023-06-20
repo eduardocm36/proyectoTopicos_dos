@@ -4,7 +4,7 @@
       <div class="d-flex align-center">
         <v-avatar color="primary" size="56" class="mx-3">EJ</v-avatar>
         <div style="font-size: 20px;">
-          Espacio de trabajo de {{ user.name }}
+          <!-- Espacio de trabajo de {{ user.name }} -->
         </div>
       </div>
     </div>

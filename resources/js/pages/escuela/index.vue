@@ -14,7 +14,7 @@ import navigation from "../../components/navigation.vue";
 export default {
   middleware: ["auth", "role:2"],
   metaInfo() {
-    return { title: this.$t("Escuela") };
+    // return { title: this.$t("Escuela") };
   },
   components: {
     navigation
