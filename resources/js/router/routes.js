@@ -3,9 +3,10 @@ function page(path) {
 }
 
 export default [
-  { path: '/', redirect: { name: 'login' } },
+  { path: '/', redirect: { name: 'home' } },
 
   { path: '/login', name: 'login', component: page('auth/login.vue') },
+  { path: '/home', name: 'home', component: page('home.vue') },
 
   { path: '/home', name: 'home', component: page('home.vue') },
 

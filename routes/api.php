@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Correos;
 use App\Http\Controllers\documentocontroller;
 use App\Http\Controllers\EvaluadorController;
+use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -50,4 +51,9 @@ Route::group(['middleware' => 'guest:api'], function () {
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('add-pandel-escuela',[PanelController::class,'add_panel']);
+     // all users
+    Route::get('all-users',[PersonaController::class,'get_personas']);
+
+    //add_users 
+    Route::post('add-users',[PersonaController::class,'add_user']);
 });

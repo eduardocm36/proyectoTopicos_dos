@@ -3,11 +3,11 @@
 
     <v-toolbar dense elevation="0" style="    background-color: transparent;  color:#fff;">
      <!--v-img class="ml-10 mr-5" max-height="38" max-width="88" src="/img/cbmediclogo.png" /-->
-      <v-toolbar-title >{{ appName }}</v-toolbar-title>
+      <v-toolbar-title class="ml-7">{{ appName }}</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-btn v-for="(link, i) in linksVerified" :key="i"  plain :to="link.path" color="#fff"  >
-        {{ link.name }}
+      <v-btn  plain :to="{name:linksVerified.path}" color="#fff"  >
+        {{ linksVerified.name }}
       </v-btn>
 
         <v-menu v-if="user" bottom min-width="220px" rounded offset-y>
@@ -65,7 +65,7 @@ export default {
     // { name: "Iniciar sesión", path: "/login", notUser: true },
     // { name: "Registrarme", path: "/registro", notUser: true },
     //],
-    bgNavbar: "rgb(13 129 225)",
+    bgNavbar: "#1d3461",
     colorletra:'#fff',
     rounded:false,
     letra_color:'#fff'
@@ -74,9 +74,11 @@ export default {
   computed: {
     ...mapGetters({
       user: "auth/user",
+      firstRoute :"auth/firstRoute",
     }),
     linksVerified: function () {
-      return [{ name: "Inicio", path: "/home" }];
+      // return [{ name: "Inicio", path: "/home" }];
+      return { name: "Inicio", path:this.firstRoute };
       //return this.links.filter((link) => !(link.notUser && this.user));
     },
 
