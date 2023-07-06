@@ -71,6 +71,8 @@ class PersonaController extends Controller
             $user->password=Hash::make($request->dni);
             $user->email_verified_at=now();
             $user->save();
+
+            return $user;
         }catch(Exception $e){
             return response()->json(['message'=>'error',$e->getMessage()],405);
         }

@@ -52,7 +52,7 @@
 
             <v-btn
               :loading="form.busy"
-              color="green accent-3"
+              color="blue darken-3"
               class="mr-4"
               type="submit"
               dark
@@ -61,6 +61,7 @@
               Ingresar
             </v-btn>
           </v-form>
+          <register/>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -71,13 +72,15 @@
 import Form from "vform";
 import Cookies from "js-cookie";
 import LoginWithGithub from "~/components/LoginWithGithub";
+import register from "./register.vue"
 
 export default {
   components: {
     LoginWithGithub,
+    register
   },
 
-  layout: "basic",
+  layout: "init",
 
   middleware: "guest",
 
@@ -136,7 +139,9 @@ export default {
 </script>
 <style scoped>
 .main {
-  background-color: rgb(223, 226, 230);
+  background-image: linear-gradient(rgba(11, 28, 61, 0.9), rgba(0, 0, 0, 0.4)), url("../../../../public/img/fondo-home.jpg") ;
+  background-position: center;
+  background-size: cover;
 }
 
 .img {
