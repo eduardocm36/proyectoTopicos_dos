@@ -54,17 +54,22 @@ class RegisterController extends Controller
      */
     protected function create(array $request): User
     {
-        $user=$this->datauser;
-        
-        $u= User::create([
-            'name' => $user['Nombres'].' '.$user['Apellido paterno'].' '.$user['Apellido materno'],
-            'email' => trim($user['Correo Institucional']),
-            'password' => bcrypt($request['password']),
-            'codigo'=>$request['codigo'],
-            'rol_id'=>4,
-        ]);
-        $this->correo=trim($user['Correo Institucional']);
-        return $u;
+        try{
+            $user=$this->datauser;
+            $this->correo=trim($user['Correo Institucional']);
+            $u= User::create([
+                'name' => $user['Nombres'].' '.$user['Apellido paterno'].' '.$user['Apellido materno'],
+                'email' => $this->correo,
+                'password' => bcrypt($request['password']),
+                'codigo'=>$request['codigo'],
+                'dni'=>$user['Dni'],
+                'rol_id'=>4,
+            ]);
+            
+            return $u;
+        }catch(Exception $e){
+            abort(405,'Error al crear el usuario');
+        }
     }
 
     protected function registrar(Request $request){
