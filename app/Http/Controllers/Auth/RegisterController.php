@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Validator;
 class RegisterController extends Controller
 {
     use RegistersUsers;
+    public $datauser;
+    public $correo;
 
     /**
      * Create a new controller instance.
@@ -53,19 +55,18 @@ class RegisterController extends Controller
     protected function create(array $request): User
     {
         $user=$this->datauser;
-        $this->correo=trim($user['Correo Institucional']);
+        
         $u= User::create([
             'name' => $user['Nombres'].' '.$user['Apellido paterno'].' '.$user['Apellido materno'],
-            'email' => $this->correo,
+            'email' => trim($user['Correo Institucional']),
             'password' => bcrypt($request['password']),
             'codigo'=>$request['codigo'],
             'rol_id'=>4,
         ]);
-
+        $this->correo=trim($user['Correo Institucional']);
         return $u;
     }
-    public $datauser;
-    public $correo;
+
     protected function registrar(Request $request){
         $request->validate([
             'password' => 'required|confirmed',
