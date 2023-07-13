@@ -117,7 +117,7 @@ export default {
       await this.$store.dispatch("auth/fetchUser");
 
       // Redirect home.
-      this.redirect();
+      this.redirect(); 
     },
 
     redirect() {
