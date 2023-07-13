@@ -63,7 +63,7 @@
         >
           <v-list-item-group
             v-model="group"
-            color="primary"
+            color="red"
           >
               <v-list-item class="px-2">
                 <v-list-item-avatar>
@@ -82,10 +82,7 @@
             </v-list-item-icon>
               <v-list-item-title>{{ link.name }}</v-list-item-title>
             </v-list-item>
-  
-         
-         
-  
+
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -149,6 +146,9 @@
   
   #home-app-bar .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active), .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon, .theme--dark.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn, .theme--dark.v-tabs > .v-tabs-bar .v-tab--disabled {
       color: rgb(255 255 255) !important;
+  }
+  #home-app-bar .v-item-group {
+    color:#00e1fe!important;
   }
   </style>
   

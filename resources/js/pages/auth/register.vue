@@ -14,29 +14,37 @@
       <v-card-title>
         Registrate
       </v-card-title>
-      <v-text-field 
-        v-model="form.codigo"
-        label="Código de estudiante"
-        outlined>
-      </v-text-field>
-      <v-text-field 
-        v-model="form.password"
-        label="Contraseña"
-        outlined>
-      </v-text-field>
-      <v-text-field 
-        v-model="form.password_confirmation"
-        label="Confirmar Contraseña"
-        outlined>
-      </v-text-field>
-      <div class="d-flex justify-center">
-        <v-btn>
-          Registrar
-        </v-btn>
-        <v-btn @click="close()">
-          Cancelar
-        </v-btn>
-      </div>
+      <form
+      @submit.prevent="register()"
+      @keydown="form.onKeydown($event)"
+      >
+        <v-text-field 
+          required
+          v-model="form.codigo"
+          label="Código de estudiante"
+          outlined>
+        </v-text-field>
+        <v-text-field 
+          required
+          v-model="form.password"
+          label="Contraseña"
+          outlined>
+        </v-text-field>
+        <v-text-field 
+          required
+          v-model="form.password_confirmation"
+          label="Confirmar Contraseña"
+          outlined>
+        </v-text-field>
+        <div class="d-flex justify-center">
+          <v-btn type="submit">
+            Registrar
+          </v-btn>
+          <v-btn @click="close()">
+            Cancelar
+          </v-btn>
+        </div>
+      </form>
     </v-card>
   </v-dialog>
 
@@ -69,28 +77,15 @@ export default {
   }),
 
   methods: {
-    async register() {
+    register() {
       // Register the user.
-      const { data } = await this.form.post("/api/register");
+       this.form.post("/api/register").then(res=>{
+        alert('correo de verificación enviado a :'+res.data.email)
+       }).catch(error=>{
+        alert(error.response.data.message)
+       });
 
-      // Must verify email fist.
-      if (data.status) {
-        this.mustVerifyEmail = true;
-      } else {
-        // Log in the user.
-        const {
-          data: { token },
-        } = await this.form.post("/api/login");
-
-        // Save the token.
-        this.$store.dispatch("auth/saveToken", { token });
-
-        // Update the user.
-        await this.$store.dispatch("auth/updateUser", { user: data });
-
-        // Redirect home.
-        this.$router.push({ name: "home" });
-      }
+    
     },
     close(){
       this.dialog = false;

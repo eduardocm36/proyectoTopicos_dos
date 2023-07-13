@@ -169,7 +169,7 @@ export default{
   /* transition-property:;
   transition-duration: 2,5s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); */
-  background: -webkit-linear-gradient(-45deg, #4377ab,#007DFE,  #1B2735);
+  background:-webkit-linear-gradient(-45deg, #4377ab,#00e1fe, #1B2735);
   -webkit-background-clip: text;
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;

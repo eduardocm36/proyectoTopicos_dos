@@ -37,7 +37,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 
 Route::group(['middleware' => 'guest:api'], function () {
     Route::post('login', [LoginController::class, 'login']);
-    Route::post('register', [RegisterController::class, 'register']);
+    Route::post('register', [RegisterController::class, 'registrar']);
 
     Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail']);
     Route::post('password/reset', [ResetPasswordController::class, 'reset']);
@@ -47,6 +47,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 
     Route::post('oauth/{driver}', [OAuthController::class, 'redirect']);
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
+
 });
 
 Route::group(['middleware' => 'auth:api'], function () {
