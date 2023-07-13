@@ -82,7 +82,7 @@ export default {
        this.form.post("/api/register").then(res=>{
         alert('correo de verificación enviado a :'+res.data.email)
        }).catch(error=>{
-        alert(e.response.data.message)
+        alert(error.response.data.message)
        });
 
     
